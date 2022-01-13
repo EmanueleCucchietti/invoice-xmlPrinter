@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emanu\\Desktop\\invoice-xmlPrinter\\XMLWriter\\XMLWriter.csproj": {}
+    "C:\\Users\\emanu\\Documents\\invoice-xmlPrinter\\XMLWriter\\XMLWriter.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emanu\\Desktop\\invoice-xmlPrinter\\XMLWriter\\XMLWriter.csproj": {
+    "C:\\Users\\emanu\\Documents\\invoice-xmlPrinter\\XMLWriter\\XMLWriter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emanu\\Desktop\\invoice-xmlPrinter\\XMLWriter\\XMLWriter.csproj",
+        "projectUniqueName": "C:\\Users\\emanu\\Documents\\invoice-xmlPrinter\\XMLWriter\\XMLWriter.csproj",
         "projectName": "XMLWriter",
-        "projectPath": "C:\\Users\\emanu\\Desktop\\invoice-xmlPrinter\\XMLWriter\\XMLWriter.csproj",
+        "projectPath": "C:\\Users\\emanu\\Documents\\invoice-xmlPrinter\\XMLWriter\\XMLWriter.csproj",
         "packagesPath": "C:\\Users\\emanu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emanu\\Desktop\\invoice-xmlPrinter\\XMLWriter\\obj\\",
+        "outputPath": "C:\\Users\\emanu\\Documents\\invoice-xmlPrinter\\XMLWriter\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\emanu\\AppData\\Roaming\\NuGet\\NuGet.Config",
