@@ -43,6 +43,7 @@
             this.pg1txtIdPaese = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.grpBxCedentePrestatore = new System.Windows.Forms.GroupBox();
+            this.pg2cmbRegimeFiscale = new System.Windows.Forms.ComboBox();
             this.pg2txtNazione = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.pg2txtComune = new System.Windows.Forms.TextBox();
@@ -53,11 +54,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.pg2txtRegimeFiscale = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.pg2txtDenominazione = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pg2txtIdPaese = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -74,13 +71,13 @@
             this.pg3txtIndirizzo = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.grpBxDatiGenerali = new System.Windows.Forms.GroupBox();
+            this.pg5cmbTipoDocumento = new System.Windows.Forms.ComboBox();
             this.pg5dtpData = new System.Windows.Forms.DateTimePicker();
             this.pg5cmbDivisa = new System.Windows.Forms.ComboBox();
             this.pg5txtNumero = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.pg5txtTipoDocumento = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.grpBxDatiBeniServizi = new System.Windows.Forms.GroupBox();
             this.pg4txtAliquotaIva = new System.Windows.Forms.TextBox();
@@ -161,6 +158,7 @@
             // 
             // pg1cmbFormatoTrasmissione
             // 
+            this.pg1cmbFormatoTrasmissione.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.pg1cmbFormatoTrasmissione.FormattingEnabled = true;
             this.pg1cmbFormatoTrasmissione.Items.AddRange(new object[] {
             "FPA12",
@@ -250,6 +248,7 @@
             // 
             // grpBxCedentePrestatore
             // 
+            this.grpBxCedentePrestatore.Controls.Add(this.pg2cmbRegimeFiscale);
             this.grpBxCedentePrestatore.Controls.Add(this.pg2txtNazione);
             this.grpBxCedentePrestatore.Controls.Add(this.label15);
             this.grpBxCedentePrestatore.Controls.Add(this.pg2txtComune);
@@ -260,11 +259,7 @@
             this.grpBxCedentePrestatore.Controls.Add(this.label19);
             this.grpBxCedentePrestatore.Controls.Add(this.label14);
             this.grpBxCedentePrestatore.Controls.Add(this.label13);
-            this.grpBxCedentePrestatore.Controls.Add(this.pg2txtRegimeFiscale);
             this.grpBxCedentePrestatore.Controls.Add(this.label12);
-            this.grpBxCedentePrestatore.Controls.Add(this.pg2txtDenominazione);
-            this.grpBxCedentePrestatore.Controls.Add(this.label11);
-            this.grpBxCedentePrestatore.Controls.Add(this.label10);
             this.grpBxCedentePrestatore.Controls.Add(this.label9);
             this.grpBxCedentePrestatore.Controls.Add(this.pg2txtIdPaese);
             this.grpBxCedentePrestatore.Controls.Add(this.label8);
@@ -278,6 +273,34 @@
             this.grpBxCedentePrestatore.TabIndex = 4;
             this.grpBxCedentePrestatore.TabStop = false;
             this.grpBxCedentePrestatore.Text = "Cedente Prestatore";
+            // 
+            // pg2cmbRegimeFiscale
+            // 
+            this.pg2cmbRegimeFiscale.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pg2cmbRegimeFiscale.FormattingEnabled = true;
+            this.pg2cmbRegimeFiscale.Items.AddRange(new object[] {
+            "RF01",
+            "RF02",
+            "RF03",
+            "RF04",
+            "RF05",
+            "RF06",
+            "RF07",
+            "RF08",
+            "RF09",
+            "RF11",
+            "RF12",
+            "RF13",
+            "RF14",
+            "RF15",
+            "RF16",
+            "RF17",
+            "RF18",
+            "RF19"});
+            this.pg2cmbRegimeFiscale.Location = new System.Drawing.Point(221, 116);
+            this.pg2cmbRegimeFiscale.Name = "pg2cmbRegimeFiscale";
+            this.pg2cmbRegimeFiscale.Size = new System.Drawing.Size(110, 23);
+            this.pg2cmbRegimeFiscale.TabIndex = 37;
             // 
             // pg2txtNazione
             // 
@@ -365,48 +388,14 @@
             this.label13.TabIndex = 15;
             this.label13.Text = "Dati Anagrafici";
             // 
-            // pg2txtRegimeFiscale
-            // 
-            this.pg2txtRegimeFiscale.Location = new System.Drawing.Point(221, 174);
-            this.pg2txtRegimeFiscale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pg2txtRegimeFiscale.Name = "pg2txtRegimeFiscale";
-            this.pg2txtRegimeFiscale.Size = new System.Drawing.Size(110, 23);
-            this.pg2txtRegimeFiscale.TabIndex = 14;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(26, 176);
+            this.label12.Location = new System.Drawing.Point(34, 116);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(88, 15);
             this.label12.TabIndex = 13;
             this.label12.Text = "Regime Fiscale:";
-            // 
-            // pg2txtDenominazione
-            // 
-            this.pg2txtDenominazione.Location = new System.Drawing.Point(221, 137);
-            this.pg2txtDenominazione.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pg2txtDenominazione.Name = "pg2txtDenominazione";
-            this.pg2txtDenominazione.Size = new System.Drawing.Size(110, 23);
-            this.pg2txtDenominazione.TabIndex = 11;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(34, 140);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 15);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Denominazione:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(26, 120);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(67, 15);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Anagrafica:";
             // 
             // label9
             // 
@@ -436,7 +425,7 @@
             // 
             // pg2txtIdCodice
             // 
-            this.pg2txtIdCodice.Location = new System.Drawing.Point(221, 88);
+            this.pg2txtIdCodice.Location = new System.Drawing.Point(221, 90);
             this.pg2txtIdCodice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pg2txtIdCodice.Name = "pg2txtIdCodice";
             this.pg2txtIdCodice.Size = new System.Drawing.Size(110, 23);
@@ -550,13 +539,13 @@
             // 
             // grpBxDatiGenerali
             // 
+            this.grpBxDatiGenerali.Controls.Add(this.pg5cmbTipoDocumento);
             this.grpBxDatiGenerali.Controls.Add(this.pg5dtpData);
             this.grpBxDatiGenerali.Controls.Add(this.pg5cmbDivisa);
             this.grpBxDatiGenerali.Controls.Add(this.pg5txtNumero);
             this.grpBxDatiGenerali.Controls.Add(this.label25);
             this.grpBxDatiGenerali.Controls.Add(this.label26);
             this.grpBxDatiGenerali.Controls.Add(this.label27);
-            this.grpBxDatiGenerali.Controls.Add(this.pg5txtTipoDocumento);
             this.grpBxDatiGenerali.Controls.Add(this.label28);
             this.grpBxDatiGenerali.Location = new System.Drawing.Point(1379, 24);
             this.grpBxDatiGenerali.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -566,6 +555,36 @@
             this.grpBxDatiGenerali.TabIndex = 11;
             this.grpBxDatiGenerali.TabStop = false;
             this.grpBxDatiGenerali.Text = "Dati Generali";
+            // 
+            // pg5cmbTipoDocumento
+            // 
+            this.pg5cmbTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pg5cmbTipoDocumento.FormattingEnabled = true;
+            this.pg5cmbTipoDocumento.Items.AddRange(new object[] {
+            "TD01",
+            "TD02",
+            "TD03",
+            "TD04",
+            "TD05",
+            "TD06",
+            "TD16",
+            "TD16",
+            "TD16",
+            "TD17",
+            "TD18",
+            "TD19",
+            "TD20",
+            "TD21",
+            "TD22",
+            "TD23",
+            "TD24",
+            "TD25",
+            "TD26",
+            "TD27"});
+            this.pg5cmbTipoDocumento.Location = new System.Drawing.Point(202, 19);
+            this.pg5cmbTipoDocumento.Name = "pg5cmbTipoDocumento";
+            this.pg5cmbTipoDocumento.Size = new System.Drawing.Size(110, 23);
+            this.pg5cmbTipoDocumento.TabIndex = 10;
             // 
             // pg5dtpData
             // 
@@ -578,6 +597,7 @@
             // 
             // pg5cmbDivisa
             // 
+            this.pg5cmbDivisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.pg5cmbDivisa.FormattingEnabled = true;
             this.pg5cmbDivisa.Items.AddRange(new object[] {
             "AED",
@@ -799,14 +819,6 @@
             this.label27.Size = new System.Drawing.Size(41, 15);
             this.label27.TabIndex = 2;
             this.label27.Text = "Divisa:";
-            // 
-            // pg5txtTipoDocumento
-            // 
-            this.pg5txtTipoDocumento.Location = new System.Drawing.Point(202, 22);
-            this.pg5txtTipoDocumento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pg5txtTipoDocumento.Name = "pg5txtTipoDocumento";
-            this.pg5txtTipoDocumento.Size = new System.Drawing.Size(110, 23);
-            this.pg5txtTipoDocumento.TabIndex = 1;
             // 
             // label28
             // 
@@ -1049,11 +1061,7 @@
         private Label label19;
         private Label label14;
         private Label label13;
-        private TextBox pg2txtRegimeFiscale;
         private Label label12;
-        private TextBox pg2txtDenominazione;
-        private Label label11;
-        private Label label10;
         private Label label9;
         private TextBox pg2txtIdPaese;
         private Label label8;
@@ -1074,7 +1082,6 @@
         private Label label25;
         private Label label26;
         private Label label27;
-        private TextBox pg5txtTipoDocumento;
         private Label label28;
         private GroupBox grpBxDatiBeniServizi;
         private TextBox pg4txtImposta;
@@ -1097,5 +1104,7 @@
         private TextBox pg4txtAliquotaIva;
         private TextBox pg4txtPrezzoTotale;
         private TextBox pg4txtDescrizione;
+        private ComboBox pg2cmbRegimeFiscale;
+        private ComboBox pg5cmbTipoDocumento;
     }
 }

@@ -18,7 +18,6 @@ namespace XMLWriter
     {
         public string IdPaese;
         public string IdCodice;
-        public string Denominazione;
         public string RegimeFiscale;
 
         public string Indirizzo;
@@ -30,7 +29,7 @@ namespace XMLWriter
     {
         public string Indirizzo;
         public string CAP;
-        public int Comune;
+        public string Comune;
         public string Nazione;
     }
     public class DatiGenerali
@@ -38,16 +37,16 @@ namespace XMLWriter
         public string TipoDocumento;
         public string Divisa;
         public DateTime Data;
-        public int Numero;
+        public float Numero;
     }
     public class DatiBeniServizi
     {
-        public int NumeroLinea;
+        public float NumeroLinea;
         public string Descrizione;
-        public int PrezzoTotale;
-        public int AliquotaIva;
-        public int AliquotaIva2;
-        public int ImponibileImporto;
-        public int Imposta;
+        public float PrezzoTotale;
+        public float AliquotaIva;
+        public float AliquotaIva2;
+        public float ImponibileImporto;
+        public float Imposta;
     }
 }

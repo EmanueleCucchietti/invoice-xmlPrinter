@@ -32,30 +32,29 @@ namespace XMLWriter
         }
         public void creaFattura()
         {
-
-            /*Intestazione*/
             writer.WriteStartElement("p:FatturaElettronica");
-            /*Attributi*/
             writer.WriteAttributeString("xmlns:ds", "http://www.w3.org/2000/09/xmldsig#");
             writer.WriteAttributeString("xmlns:p", "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2");
             writer.WriteAttributeString("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
-            //writer.WriteAttributeString("versione", COMBOBOXDARINOMINARE.SelectedText);
             writer.WriteAttributeString("xsi:schemaLocation", "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2 http://www.fatturapa.gov.it/export/fatturazione/sdi/fatturapa/v1.2/Schema_del_file_xml_FatturaPA_versione_1.2.xsd");
 
             writeXmlInnerTags();
 
-            writer.WriteEndElement();// p:FatturaElettronica
-            writer.Close();//Sempre da chiudere alla fine
+            writer.WriteEndElement();
+            writer.Close();
         }
         private void writeXmlInnerTags()
         {
+            writer.WriteStartElement("FatturaELeetronicaHeader");
             writeDatiTrasmissione();
             writeCedentePrestatore();
             writeCessionarioCommittente();
+            writer.WriteEndElement();
+            writer.WriteStartElement("FatturaELettronicaBody");
             writeDatiBeniServizi();
             writeDatiGenerali();
+            writer.WriteEndElement();
         }
-
 
         private void writeDatiTrasmissione()
         {
@@ -82,15 +81,12 @@ namespace XMLWriter
             writer.WriteElementString("RegimeFiscale",Data2.RegimeFiscale);
             writer.WriteEndElement();/*DATI ANAGRAFICI*/
 
-            writer.WriteStartElement("Sede");
-            writer.WriteElementString("IdPaese", Data2.IdPaese);
-            writer.WriteElementString("IdCodice", Data2.IdCodice);
-            writer.WriteEndElement();/*SEDE*/
-
+            writer.WriteStartElement("Sede");/*SEDE*/
             writer.WriteElementString("Indirizzo", Data2.Indirizzo);
             writer.WriteElementString("CAP", Data2.CAP);
             writer.WriteElementString("Comune", Data2.Comune);
             writer.WriteElementString("Nazione", Data2.Nazione);
+            writer.WriteEndElement();/*SEDE*/
             writer.WriteEndElement();/*CEDENTE PRESTATORE*/
         }
         private void writeCessionarioCommittente()
