@@ -96,7 +96,7 @@ namespace XMLWriter
             writer.WriteStartElement("Sede");/*SEDE*/
             writer.WriteElementString("Indirizzo", Data3.Indirizzo);
             writer.WriteElementString("CAP", Data3.CAP);
-            writer.WriteElementString("Comune", Data3.Comune.ToString());
+            writer.WriteElementString("Comune", Data3.Comune);
             writer.WriteElementString("Nazione", Data3.Nazione);
             writer.WriteEndElement();/*SEDE*/
 
@@ -106,13 +106,13 @@ namespace XMLWriter
         {
             writer.WriteStartElement("DatiBeniServizi");/*DatiBeniServizi*/
             writer.WriteStartElement("DettaglioLinee");/*DettaglioLinee*/
-            writer.WriteElementString("NumeroLinea", Data5.NumeroLinea.ToString());
+            writer.WriteElementString("NumeroLinea", Data5.NumeroLinea);
             writer.WriteElementString("Descrizione", Data5.Descrizione);
-            writer.WriteElementString("PrezzoTotale", Data5.PrezzoTotale.ToString());
-            writer.WriteElementString("AliquotaIva", Data5.AliquotaIva.ToString());
-            writer.WriteElementString("AliquotaIva2", Data5.AliquotaIva2.ToString());
-            writer.WriteElementString("ImponibileImporto", Data5.ImponibileImporto.ToString());
-            writer.WriteElementString("Imposta", Data5.Imposta.ToString());
+            writer.WriteElementString("PrezzoTotale", Data5.PrezzoTotale);
+            writer.WriteElementString("AliquotaIva", Data5.AliquotaIva);
+            writer.WriteElementString("AliquotaIva2", Data5.AliquotaIva2);
+            writer.WriteElementString("ImponibileImporto", Data5.ImponibileImporto);
+            writer.WriteElementString("Imposta", Data5.Imposta);
             writer.WriteEndElement();/*DettaglioLinee*/
 
             writer.WriteEndElement();/*DatiBeniServizi*/
@@ -125,7 +125,7 @@ namespace XMLWriter
             writer.WriteElementString("TipoDocumento", Data4.TipoDocumento);
             writer.WriteElementString("Divisa", Data4.Divisa);
             writer.WriteElementString("Data", Data4.Data.ToString());
-            writer.WriteElementString("Numero", Data4.Numero.ToString());
+            writer.WriteElementString("Numero", Data4.Numero);
             writer.WriteEndElement();//Dati generali documento
 
             writer.WriteEndElement();//Dati generali

@@ -86,6 +86,7 @@ namespace XMLWriter
         {
             if (actualPage == 4)
             {
+                MessageBox.Show("test");
                 //stampa
                 if (controlloRegex())
                 {
@@ -210,13 +211,13 @@ namespace XMLWriter
 
         private void saveDatibeniservizi()
         {
-            data5.NumeroLinea = float.Parse(pg4txtNumeroLinea.Text);
+            data5.NumeroLinea =pg4txtNumeroLinea.Text;
             data5.Descrizione = pg4txtDescrizione.Text;
-            data5.PrezzoTotale = float.Parse(pg4txtPrezzoTotale.Text);
-            data5.AliquotaIva = float.Parse(pg4txtAliquotaIva.Text);
-            data5.AliquotaIva2 = float.Parse(pg4txtAliquotaIva2.Text);
-            data5.ImponibileImporto = float.Parse(pg4txtImponibileImporto.Text);
-            data5.Imposta = float.Parse(pg4txtImposta.Text);
+            data5.PrezzoTotale = pg4txtPrezzoTotale.Text;
+            data5.AliquotaIva = pg4txtAliquotaIva.Text;
+            data5.AliquotaIva2 = pg4txtAliquotaIva2.Text;
+            data5.ImponibileImporto = pg4txtImponibileImporto.Text;
+            data5.Imposta = pg4txtImposta.Text;
         }
 
         private void saveDatiTrasmissione()
@@ -249,7 +250,7 @@ namespace XMLWriter
             data4.TipoDocumento = pg5cmbTipoDocumento.Text;
             data4.Divisa = pg5cmbDivisa.Text;
             data4.Data = pg5dtpData.Value;
-            data4.Numero = float.Parse(pg5txtNumero.Text);
+            data4.Numero = pg5txtNumero.Text;
         }
 
         private void btnBack_Click(object sender, EventArgs e)

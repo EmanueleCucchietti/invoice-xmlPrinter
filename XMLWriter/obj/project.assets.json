@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\emanu\\Desktop\\invoice-xmlPrinter\\XMLWriter\\XMLWriter.csproj",
+      "projectUniqueName": "C:\\Users\\emanu\\Desktop\\weoierg\\invoice-xmlPrinter\\XMLWriter\\XMLWriter.csproj",
       "projectName": "XMLWriter",
-      "projectPath": "C:\\Users\\emanu\\Desktop\\invoice-xmlPrinter\\XMLWriter\\XMLWriter.csproj",
+      "projectPath": "C:\\Users\\emanu\\Desktop\\weoierg\\invoice-xmlPrinter\\XMLWriter\\XMLWriter.csproj",
       "packagesPath": "C:\\Users\\emanu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\emanu\\Desktop\\invoice-xmlPrinter\\XMLWriter\\obj\\",
+      "outputPath": "C:\\Users\\emanu\\Desktop\\weoierg\\invoice-xmlPrinter\\XMLWriter\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\emanu\\AppData\\Roaming\\NuGet\\NuGet.Config",

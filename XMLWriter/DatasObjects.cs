@@ -37,16 +37,16 @@ namespace XMLWriter
         public string TipoDocumento;
         public string Divisa;
         public DateTime Data;
-        public float Numero;
+        public string Numero;
     }
     public class DatiBeniServizi
     {
-        public float NumeroLinea;
+        public string NumeroLinea;
         public string Descrizione;
-        public float PrezzoTotale;
-        public float AliquotaIva;
-        public float AliquotaIva2;
-        public float ImponibileImporto;
-        public float Imposta;
+        public string PrezzoTotale;
+        public string AliquotaIva;
+        public string AliquotaIva2;
+        public string ImponibileImporto;
+        public string Imposta;
     }
 }

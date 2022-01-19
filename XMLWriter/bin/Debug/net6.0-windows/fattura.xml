@@ -2,55 +2,55 @@
   <FatturaELeetronicaHeader>
     <DatiTrasmissione>
       <IdTrasmittente>
-        <IdPaese>cf</IdPaese>
-        <IdCodice>dstr</IdCodice>
+        <IdPaese>fe</IdPaese>
+        <IdCodice>ewf</IdCodice>
       </IdTrasmittente>
-      <ProgressivoInvio>rtt</ProgressivoInvio>
-      <FormatoTrasmissione>FPR12</FormatoTrasmissione>
-      <CodiceDestinatario>tr</CodiceDestinatario>
+      <ProgressivoInvio>few</ProgressivoInvio>
+      <FormatoTrasmissione>FPA12</FormatoTrasmissione>
+      <CodiceDestinatario>efw</CodiceDestinatario>
     </DatiTrasmissione>
     <CedentePrestatore>
       <DatiAnagrafici>
         <IdFiscaleIVA>
-          <IdPaese>tr</IdPaese>
-          <IdCodice>rwr</IdCodice>
+          <IdPaese>fe</IdPaese>
+          <IdCodice>ewf</IdCodice>
         </IdFiscaleIVA>
-        <RegimeFiscale>RF04</RegimeFiscale>
+        <RegimeFiscale>RF01</RegimeFiscale>
       </DatiAnagrafici>
       <Sede>
-        <Indirizzo>rt</Indirizzo>
-        <CAP>34443</CAP>
-        <Comune>ere</Comune>
-        <Nazione>re</Nazione>
+        <Indirizzo>fe</Indirizzo>
+        <CAP>33333</CAP>
+        <Comune>few</Comune>
+        <Nazione>dw</Nazione>
       </Sede>
     </CedentePrestatore>
     <CessionarioCommittente>
       <Sede>
-        <Indirizzo>regre23</Indirizzo>
-        <CAP>23322</CAP>
-        <Comune>ewr</Comune>
-        <Nazione>re</Nazione>
+        <Indirizzo>fewf</Indirizzo>
+        <CAP>33333</CAP>
+        <Comune>efw3</Comune>
+        <Nazione>ew</Nazione>
       </Sede>
     </CessionarioCommittente>
   </FatturaELeetronicaHeader>
   <FatturaELettronicaBody>
     <DatiBeniServizi>
       <DettaglioLinee>
-        <NumeroLinea>3242</NumeroLinea>
-        <Descrizione>23r23</Descrizione>
-        <PrezzoTotale>2332</PrezzoTotale>
-        <AliquotaIva>1222</AliquotaIva>
-        <AliquotaIva2>3244</AliquotaIva2>
-        <ImponibileImporto>4322</ImponibileImporto>
+        <NumeroLinea>23323</NumeroLinea>
+        <Descrizione>23</Descrizione>
+        <PrezzoTotale>32.23</PrezzoTotale>
+        <AliquotaIva>32.23</AliquotaIva>
+        <AliquotaIva2>32.32</AliquotaIva2>
+        <ImponibileImporto>32.3</ImponibileImporto>
         <Imposta>2332</Imposta>
       </DettaglioLinee>
     </DatiBeniServizi>
     <DatiGenerali>
       <DatiGeneraliDocumento>
-        <TipoDocumento>TD05</TipoDocumento>
-        <Divisa>AMD</Divisa>
-        <Data>22/03/2022 21:24:56</Data>
-        <Numero>345435</Numero>
+        <TipoDocumento>TD01</TipoDocumento>
+        <Divisa>AED</Divisa>
+        <Data>19/01/2022 21:46:54</Data>
+        <Numero>12</Numero>
       </DatiGeneraliDocumento>
     </DatiGenerali>
   </FatturaELettronicaBody>
