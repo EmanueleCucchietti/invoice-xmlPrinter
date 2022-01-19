@@ -1,60 +1,248 @@
-﻿<root>
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-</root>
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Xml;
+using System.Text.RegularExpressions;
+
+namespace Fattura
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        XmlTextWriter xmlWrt;
+        int i, j;
+        string[,] dettaglioLinee = new string[100, 2];
+        string[,] datiRiepilogo = new string[100, 2];
+
+        private void DatiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gpbDatiTrasmissione.Visible = true;
+            gpbCedentePrestatore.Visible = false;
+            gpbCessionarioCommittente.Visible = false;
+            gpbDatiGenerali.Visible = false;
+            gpbDatiBeniServizi.Visible = false;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            i = j = 0;
+            /*foreach (var textbox in this.Controls.OfType<TextBox>())
+            {
+                s.AppendLine("ciao");
+            }*/
+
+            cambioSize(gpbDatiBeniServizi);
+            cambioSize(gpbDatiGenerali);
+            cambioSize(gpbCessionarioCommittente);
+            cambioSize(gpbCedentePrestatore);
+            this.Size = new Size(640, 430);
+            txtIdPaese.TextChanged += TxtIdPaese_TextChanged;
+            txtIdPaeseIVA.TextChanged += TxtIdPaese_TextChanged;
+            txtNazioneCessionarioCommittente.TextChanged += TxtIdPaese_TextChanged;
+            txtNazione.TextChanged += TxtIdPaese_TextChanged;
+        }
+
+        private void TxtIdPaese_TextChanged(object sender, EventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+            Regex paese = new Regex(@"^[A-Za-z]{2}$");
+            if (paese.IsMatch(txt.Text))
+                txt.ForeColor = Color.Black;
+            else
+                txt.ForeColor = Color.Red;
+        }
+
+        private void cambioSize(GroupBox gpb)
+        {
+            gpb.Location = new Point(12, 27);
+        }
+
+        private void CedentePrestatoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+            gpbCedentePrestatore.Visible = true;
+            gpbDatiTrasmissione.Visible = false;
+            gpbCessionarioCommittente.Visible = false;
+            gpbDatiGenerali.Visible = false;
+            gpbDatiBeniServizi.Visible = false;
+        }
+
+        private void CessionarioCommittenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+            gpbCessionarioCommittente.Visible = true;
+            gpbDatiTrasmissione.Visible = false;
+            gpbCedentePrestatore.Visible = false;
+            gpbDatiGenerali.Visible = false;
+            gpbDatiBeniServizi.Visible = false;
+        }
+
+        private void datiGeneraliToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+            gpbDatiGenerali.Visible = true;
+            gpbCedentePrestatore.Visible = false;
+            gpbCessionarioCommittente.Visible = false;
+            gpbDatiTrasmissione.Visible = false;
+            gpbDatiBeniServizi.Visible = false;
+        }
+
+        private void datiBeniServiziToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+            gpbDatiBeniServizi.Visible = true;
+            gpbDatiGenerali.Visible = false;
+            gpbCedentePrestatore.Visible = false;
+            gpbCessionarioCommittente.Visible = false;
+            gpbDatiTrasmissione.Visible = false;
+        }
+
+
+        private void btnCreaFattura_Click(object sender, EventArgs e)
+        {
+           
+            string pathXml = "fatturaTest.xml";
+            xmlWrt = new XmlTextWriter(pathXml, Encoding.UTF8);
+            xmlWrt.Formatting = Formatting.Indented;
+
+            /*Intestazione*/
+            xmlWrt.WriteStartElement("p:FatturaElettronica");
+            /*Attributi*/
+            xmlWrt.WriteAttributeString("xmlns:ds", "http://www.w3.org/2000/09/xmldsig#");
+            xmlWrt.WriteAttributeString("xmlns:p", "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2");
+            xmlWrt.WriteAttributeString("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
+            xmlWrt.WriteAttributeString("versione", cmbFormatoTrasmissione.SelectedText);
+            xmlWrt.WriteAttributeString("xsi:schemaLocation", "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2 http://www.fatturapa.gov.it/export/fatturazione/sdi/fatturapa/v1.2/Schema_del_file_xml_FatturaPA_versione_1.2.xsd");
+
+            XMLDatiTrasmissione();
+            XMLCedentePrestatore();
+            XMLCessionarioCommittente();
+            XMLDatiGenerali();
+            XMLDatiBeniServizi();
+
+            //xmlWrt.WriteElementString("IdPaese", "IT");
+            xmlWrt.WriteEndElement();// p:FatturaElettronica
+            xmlWrt.Close();//Sempre da chiudere alla fine
+           
+        }
+
+        private void XMLDatiTrasmissione()
+        {
+            xmlWrt.WriteStartElement("DatiTrasmissione");
+            xmlWrt.WriteStartElement("IdTrsmittente");
+            xmlWrt.WriteElementString("IdPaese", txtIdPaese.Text);
+            xmlWrt.WriteElementString("IdCodice", txtIdCodice.Text);
+            xmlWrt.WriteEndElement();//fine id trasmittente
+
+            xmlWrt.WriteElementString("ProgressivoInvio", txtProgressivoInvio.Text);
+            xmlWrt.WriteElementString("FormatoTrasmissione", cmbFormatoTrasmissione.SelectedText);
+            xmlWrt.WriteElementString("CodiceDestinatario", txtCodiceDestinatario.Text);
+            xmlWrt.WriteEndElement();
+           
+
+           
+        }
+
+        private void XMLCedentePrestatore()
+        {
+            xmlWrt.WriteStartElement("CedentePrestatore");
+            xmlWrt.WriteStartElement("DatiAnagrafici");
+            xmlWrt.WriteStartElement("IdFiscaleIVA");
+            xmlWrt.WriteElementString("IdPaese", txtIdPaeseIVA.Text);
+            xmlWrt.WriteElementString("IdCodice", txtIdCodiceIVA.Text);
+            xmlWrt.WriteEndElement();//fine id fiscale IVA
+            xmlWrt.WriteElementString("RegimeFiscale", txtRegimeFiscale.Text);
+
+            xmlWrt.WriteStartElement("Anagrafica");
+            controlloAnagrafica();
+            xmlWrt.WriteEndElement();//anagrafica
+
+            xmlWrt.WriteEndElement();//dati anagrafici
+
+            xmlWrt.WriteStartElement("Sede");
+            xmlWrt.WriteElementString("IdPaese", txtIdPaeseIVA.Text);
+            xmlWrt.WriteElementString("IdCodice", txtIdCodiceIVA.Text);
+            xmlWrt.WriteEndElement();//sede
+
+            xmlWrt.WriteElementString("Indirizzo", txtIndirizzo.Text);
+            xmlWrt.WriteElementString("CAP", txtCAP.Text);
+            xmlWrt.WriteElementString("Comune", txtComune.Text);
+            xmlWrt.WriteElementString("Nazione", txtNazione.Text);
+            xmlWrt.WriteEndElement();//cedente prestatore
+        }
+
+        private void controlloAnagrafica()
+        {
+            if (txtDenominazione.Text != "")
+                xmlWrt.WriteElementString("Denominazione", txtDenominazione.Text);
+            if (txtNome.Text != "")
+                xmlWrt.WriteElementString("Nome", txtNome.Text);
+            if (txtCognome.Text != "")
+                xmlWrt.WriteElementString("Cognome", txtCognome.Text);
+            if (txtTitolo.Text != "")
+                xmlWrt.WriteElementString("Titolo", txtTitolo.Text);
+            if (txtCodEORI.Text != "")
+                xmlWrt.WriteElementString("CodEORI", txtCodEORI.Text);
+        }
+
+        private void XMLCessionarioCommittente()
+        {
+            xmlWrt.WriteStartElement("CessionarioCommittente");
+
+            xmlWrt.WriteStartElement("Sede");
+            xmlWrt.WriteElementString("Indirizzo", txtIndirizzoCessionarioCommittente.Text);
+            xmlWrt.WriteElementString("CAP", txtCAPCessionarioCommittente.Text);
+            xmlWrt.WriteElementString("Comune", txtComuneCessionarioCommittente.Text);
+            xmlWrt.WriteElementString("Nazione", txtNazioneCessionarioCommittente.Text);
+            xmlWrt.WriteEndElement();//sede
+
+            xmlWrt.WriteEndElement();//Cessionario committente
+
+        }
+   
+
+        private void XMLDatiGenerali()
+        {
+            xmlWrt.WriteStartElement("DatiGenerali");
+
+            xmlWrt.WriteStartElement("DatiGeneraliDocumento");
+            xmlWrt.WriteElementString("TipoDocumento", txtTipoDocumento.Text);
+            xmlWrt.WriteElementString("Divisa", txtDivisa.Text);
+            xmlWrt.WriteElementString("Data", dtpData.Value.ToString());
+            xmlWrt.WriteElementString("Numero", txtNumero.Text);
+            xmlWrt.WriteEndElement();//Dati generali documento
+
+            xmlWrt.WriteEndElement();//Dati generali
+        }
+
+        private void XMLDatiBeniServizi()
+        {
+
+        }
+
+        private void btnAggiungi_Click(object sender, EventArgs e)
+        {
+            if(txtNumeroLinea.Text != "" && txtDescrizione.Text != "" && txtPrezzoTotale.Text != "" && txtAliquotaIVA.Text != "")
+            {
+                if (txtAliquotaIVADatiRiepilogo.Text != "" && txtImportoImmbolie.Text != "" && txtImposta.Text != "")
+                {
+                   
+                }
+                else
+                {
+                    MessageBox.Show("Dati mancanti. Impossibile aggiungere al file XML");
+                }
+            }
+            MessageBox.Show("Dati mancanti. Impossibile aggiungere al file XML");
+        }
+    }
+}

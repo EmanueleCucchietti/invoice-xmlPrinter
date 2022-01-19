@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tRRglQKTrit3dCiM3ztaizf0s6bnznlO1CeZSHs7KhzeQimvcz1RI7GArrJ2uA1pNpU5JY71HfB8/S6PTAdo4Q==",
+  "dgSpecHash": "Dl7lHD2MBj6OkgxICKu4SdXuS3H4nvv/uJpWAz+Zrq8Hii04vXMMwsW8FGdhEuT6HZpGk0zTOI/MfHWlMp/UzQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\emanu\\Documents\\invoice-xmlPrinter\\XMLWriter\\XMLWriter.csproj",
+  "projectFilePath": "C:\\Users\\emanu\\Desktop\\invoice-xmlPrinter\\XMLWriter\\XMLWriter.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
